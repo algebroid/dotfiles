@@ -7,10 +7,11 @@ set term=xterm-256color
 set encoding=utf-8
 " 一時ファイルを作って欲しくない
 set noundofile
-set number
 set nobackup
+set noswapfile
 
 set ruler
+set number
 
 " タブをスペースに
 set expandtab
