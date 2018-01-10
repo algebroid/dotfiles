@@ -45,7 +45,7 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/wombat256.vim'
 Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim', {'on': 'VimFiler'}
+Plug 'Shougo/vimfiler.vim', {'on': 'VimFilerExplorer'}
 call plug#end()
 
 try
