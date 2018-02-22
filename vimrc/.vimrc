@@ -42,6 +42,12 @@ set autoindent
 set visualbell
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+" 表示行で移動
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+
 call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/wombat256.vim'
 Plug 'Shougo/unite.vim'
