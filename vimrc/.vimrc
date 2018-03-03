@@ -52,6 +52,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/wombat256.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim', {'on': 'VimFilerExplorer'}
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 try
@@ -95,3 +96,4 @@ endfor
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
+let g:syntastic_ocaml_checkers = ['merlin']
