@@ -39,6 +39,7 @@ set clipboard=unnamed,autoselect
 
 set backspace=indent,eol,start
 set autoindent
+set smartindent
 set visualbell
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
@@ -53,6 +54,7 @@ Plug 'vim-scripts/wombat256.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim', {'on': 'VimFilerExplorer'}
 Plug 'vim-syntastic/syntastic'
+Plug 'zig-lang/zig.vim'
 call plug#end()
 
 try
