@@ -53,10 +53,34 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/wombat256.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim', {'on': 'VimFilerExplorer'}
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'eagletmt/ghcmod-vim'
+Plug 'eagletmt/neco-ghc'
 Plug 'vim-syntastic/syntastic'
 Plug 'zig-lang/zig.vim'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
+" recommended settings for syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" neco-ghcのオムニ補完用設定
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" YouCompleteMeの設定 (ghc-mod連携)
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+" Haskell用のsyntastic設定
+let g:syntastic_haskell_checkers = ["hdevtools", "hlint"]
+
+" カラースキーム
 try
   colorscheme wombat256mod
 catch
@@ -99,3 +123,5 @@ let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 let g:syntastic_ocaml_checkers = ['merlin']
+
+filetype plugin indent on
